@@ -1,6 +1,48 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+// App component
+var App = React.createClass({
+  render: function() {
+    return (
+      <div className="catch-of-the-day">
+        <div className="menu">
+          <Header/>
+        </div>
+        <Order/>
+        <Inventory/>
+      </div>
+    );
+  }
+});
+
+// Header component
+var Header = React.createClass({
+  render: function() {
+    return (
+      <p>Header</p>
+    );
+  }
+});
+
+// Order component
+var Order = React.createClass({
+  render: function() {
+    return (
+      <p>Order</p>
+    );
+  }
+});
+
+// Inventory component
+var Inventory = React.createClass({
+  render: function() {
+    return (
+      <p>Inventory</p>
+    );
+  }
+});
+
 // StorePicker component
 var StorePicker = React.createClass({
   render: function() {
@@ -14,4 +56,4 @@ var StorePicker = React.createClass({
   }
 });
 
-ReactDOM.render(<StorePicker/>, document.getElementById('main'));
+ReactDOM.render(<App/>, document.getElementById('main'));
