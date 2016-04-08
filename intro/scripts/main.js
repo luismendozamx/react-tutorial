@@ -23,6 +23,14 @@ var App = React.createClass({
   }
 });
 
+var AddFishForm = React.createClass({
+  render: function() {
+    return (
+      <p>Test</p>
+    );
+  }
+});
+
 // Header component
 var Header = React.createClass({
   render: function() {
@@ -62,13 +70,11 @@ var Inventory = React.createClass({
 
 // StorePicker component
 var StorePicker = React.createClass({
-  mixins: [History],
-
   goToStore: function (event) {
     event.preventDefault();
     // get data from input
     var storeId = this.refs.storeId.value;
-    this.history.pushState(null, '/store/' + storeId);
+    browserHistory.push('/store/' + storeId);
   },
   render: function() {
     return (
