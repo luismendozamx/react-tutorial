@@ -2,7 +2,7 @@ import React from 'react';
 import autobind from 'autobind-decorator';
 
 @autobind
-export default class AddFishForm extends React.Component {
+class AddFishForm extends React.Component {
   createFish(event) {
     event.preventDefault();
 
@@ -34,3 +34,5 @@ export default class AddFishForm extends React.Component {
     );
   }
 };
+
+export default AddFishForm;

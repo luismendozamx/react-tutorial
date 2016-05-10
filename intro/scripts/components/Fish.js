@@ -3,7 +3,7 @@ import helpers from '../helpers';
 import autobind from 'autobind-decorator';
 
 @autobind
-export default class Fish extends React.Component {
+class Fish extends React.Component {
   onButtonClick() {
     this.props.addToOrder(this.props.index);
   }
@@ -26,3 +26,5 @@ export default class Fish extends React.Component {
     );
   }
 };
+
+export default Fish;
