@@ -1,12 +1,14 @@
 import React from 'react';
 import helpers from '../helpers';
+import autobind from 'autobind-decorator';
 
-export default React.createClass({
-  onButtonClick: function() {
+@autobind
+export default class Fish extends React.Component {
+  onButtonClick() {
     this.props.addToOrder(this.props.index);
-  },
+  }
 
-  render: function() {
+  render() {
     var details = this.props.details;
     var isAvailable = details.status === 'available' ? true : false;
     var butttonText = isAvailable ? 'Add to Order' : 'SOLD OUT';
@@ -23,4 +25,4 @@ export default React.createClass({
       </li>
     );
   }
-});
+};

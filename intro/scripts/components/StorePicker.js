@@ -1,15 +1,18 @@
 import React from 'react';
 import { Navigation, browserHistory } from 'react-router';
 import helpers from '../helpers';
+import autobind from 'autobind-decorator';
 
-export default React.createClass({
-  goToStore: function (event) {
+@autobind
+class StorePicker extends React.Component {
+  goToStore(event) {
     event.preventDefault();
     // get data from input
     var storeId = this.refs.storeId.value;
     browserHistory.push('/store/' + storeId);
-  },
-  render: function() {
+  }
+
+  render() {
     return (
       <form className="store-selector" onSubmit={this.goToStore}>
         <h2>Please enter a store</h2>
@@ -18,4 +21,6 @@ export default React.createClass({
       </form>
     );
   }
-});
+};
+
+export default StorePicker;
