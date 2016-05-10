@@ -8,7 +8,7 @@ import Inventory from './Inventory';
 import reactMixin from 'react-mixin';
 import autobind from 'autobind-decorator';
 
-let base = Rebase.createClass('https://react-test-catch.firebaseio.com/');
+const base = Rebase.createClass('https://react-test-catch.firebaseio.com/');
 
 @autobind
 class App extends React.Component {
@@ -88,7 +88,7 @@ class App extends React.Component {
               removeFromOrder={this.removeFromOrder}/>
         <Inventory addFish={this.addFish} loadSamples={this.loadSamples}
                   fishes={this.state.fishes} linkState={this.linkState.bind(this)}
-                  removeFish={this.removeFish} />
+                  removeFish={this.removeFish} params={this.props.params} />
       </div>
     );
   }
